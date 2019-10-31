@@ -14,30 +14,24 @@ perform the test prediction
 
 
 ## Prerequisites
-This lab makes use of the Azure resource Custom Vision. You can create it through the Azure portal or on <https://customvision.ai>
+This lab makes use of the Azure resource Cognitive Services. You can create it through the Azure portal or on <https://customvision.ai>
 
-## Step 0: The API keys, endpoints and resource id's
+## Step 0: The API key, endpoint and resource id
 
-You also need to have a training and prediction API key. The training API key allows you to
-create, manage, and train Custom Vision projects programatically. All operations
-on <https://customvision.ai> are exposed through this library, allowing you to
-automate all aspects of the Custom Vision Service. You can obtain a key by
+You can obtain the information by
 accessing <https://customvision.ai> and then clicking on the
 "setting" gear in the top right or through the Azure portal.
 
 > Note: Internet Explorer is not supported. We recommend using Edge, Firefox, or Chrome.
 
-### Step 1: Add your keys, endpoints and resource id into the Program.cs file
+### Step 1: Add your key, endpoint and resource id into the Program.cs file
 
 Find the following code and update it with your information.
 
 ```c#
-string trainingEndpoint = "<your training endpoint url>";
-string trainingKey = "<your training key>";
-
-string predictionEndpoint = "<your prediction endpoint url>";
-string predictionKey = "<your prediction key>";
-string predictionResourceId = "<your prediction resource id>";
+string endpoint = "<your cognitive services endpoint url>";
+string key = "<your cognitive services key>";
+string resourceId = "<your cognitive services resource id>";
 ```
 
 ## Step 2: Create a Custom Vision Service project
@@ -111,13 +105,13 @@ while (iteration.Status == "Training")
 
 // The iteration is now trained. Publish it to the prediction end point.
 var publishedModelName = "carAssessmentModel";
-trainingApi.PublishIteration(project.Id, iteration.Id, publishedModelName, predictionResourceId);
+trainingApi.PublishIteration(project.Id, iteration.Id, publishedModelName, resourceId);
 Console.WriteLine("Done!\n");
 ```
 
 >Q. What method should you replace the _ with to train the project?
 
-## Step 6: Get and use the default prediction endpoint
+## Step 6: Make a prediction
 
 We are now ready to use the model for prediction. First we create the prediction client. Then we send test images to the project using our published model.
 Insert the code after the training code you have just
@@ -126,8 +120,8 @@ entered.
 ```c#
 var predictionApi = new CustomVisionPredictionClient()
 {
-    ApiKey = predictionKey,
-    Endpoint = predictionEndpoint
+    ApiKey = key,
+    Endpoint = endpoint
 };
 
 // Make a prediction against the new project
