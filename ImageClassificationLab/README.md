@@ -1,6 +1,6 @@
 # Lab: Creating Image Classification Applications using the Custom Vision API
 
-In this lab, you will create an application that deals with the classification of plants.
+In this lab, you will create an application that deals with the classification of damaged cars.
 
 In the Workshop.ImageClassificationLabStarter\Images folder are three folders:
 
