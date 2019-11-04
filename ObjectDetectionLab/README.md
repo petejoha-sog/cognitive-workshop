@@ -6,5 +6,5 @@ A note about the resources used in this lab. To use Custom Vision capabilities y
 
 1. Open the solution in [ObjectDetectionStarter](/ObjectDetectionStarter)
 2. Inspect the Program.cs file. Notice that there are a lot of comments but not a lot of code.
-3. Follow the guide on Microsoft to fill in the code thats missing and run the application. 
+3. Follow the [guide on Microsoft](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/csharp-tutorial-od) to fill in the code thats missing and run the application. 
 4. Inspect your project in the [Custom Vision portal](https://customvision.ai)
