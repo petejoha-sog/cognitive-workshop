@@ -9,7 +9,7 @@ Replication: Locally.redundant storage (LRS)
 
 Create a container in your storage account called with a name e.g. randomfiles.
 
-Upload the files from the [random images folder](/AzureSearchLab/randomimages)
+Upload the files from the random images folder
 
 ## Create a search service
 
