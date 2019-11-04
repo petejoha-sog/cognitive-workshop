@@ -9,7 +9,7 @@ Replication: Locally.redundant storage (LRS)
 
 Create a container in your storage account called with a name e.g. randomfiles.
 
-Upload the files from the [random images folder](/randomimages)
+Upload the files from the [random images folder](./randomimages)
 
 ## Create a search service
 
